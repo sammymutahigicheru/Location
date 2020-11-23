@@ -1,4 +1,4 @@
-package com.sammy.data_remote
+package com.sammy.local
 
 import org.junit.Test
 

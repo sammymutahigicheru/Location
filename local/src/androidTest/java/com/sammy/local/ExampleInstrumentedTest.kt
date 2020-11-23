@@ -1,4 +1,4 @@
-package com.sammy.data_remote
+package com.sammy.local
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.sammy.data_remote.test", appContext.packageName)
+        assertEquals("com.sammy.local.test", appContext.packageName)
     }
 }
