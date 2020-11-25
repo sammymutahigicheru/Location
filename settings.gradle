@@ -1,2 +1,6 @@
+include ':data-remote'
+include ':local'
+include ':data-local'
+include ':domain'
 include ':app'
 rootProject.name = "Location"
