@@ -1,12 +1,12 @@
-package com.sammy.data_remote.models
+package com.sammy.domain.models
 
 data class LocationBodyRequest(
-    val miatConfig:MiataruConfig,
-    val miatGetLocation:MiataruGetLocation
+    val miatConfig: MiataruConfig,
+    val miatGetLocation: MiataruGetLocation
 )
 
 data class MiataruConfig(
-    val miataruConfig:RequestMiataruDeviceID
+    val miataruConfig: RequestMiataruDeviceID
 )
 data class RequestMiataruDeviceID(
     val requestMiataruDeviceID:String

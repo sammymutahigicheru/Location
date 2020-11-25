@@ -3,6 +3,7 @@ package com.sammy.data_remote.models
 import com.squareup.moshi.Json
 
 data class LocationResponse(
+    @field:Json(name="MiataruLocation")
     val location:List<MiataruLocation>
 )
 data class MiataruLocation(
