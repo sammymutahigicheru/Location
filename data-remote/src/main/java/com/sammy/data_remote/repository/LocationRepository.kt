@@ -11,12 +11,12 @@ import kotlinx.coroutines.flow.flow
 
 class LocationRepository(
     private val locationApiService: LocationApiService
-):ILocationRepository {
+) : ILocationRepository {
     override suspend fun getCurrentLocation(locationBodyRequest: LocationBodyRequest): Flow<List<Location>> =
         flow {
             val locationResponse = locationApiService.getCurrentLocation(locationBodyRequest)
             val locations = mutableListOf<Location>()
-            for (location in locationResponse.location){
+            for (location in locationResponse.location) {
                 locations.add(location.toDomain())
             }
             emit(locations)
