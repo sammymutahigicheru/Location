@@ -17,5 +17,5 @@ interface FavoriteDao {
         return Result.SUCCESS
     }
     @Query("SELECT * FROM favorites")
-    suspend fun getAll(): Flow<List<Favourite>>
+    suspend fun getAll(): List<Favourite>
 }

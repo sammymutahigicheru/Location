@@ -1,6 +1,6 @@
 package com.sammy.location.models
 
-internal data class LocationPresentation(
+data class LocationPresentation(
     val device: String,
     val timestamp: String,
     val longitude: String,
