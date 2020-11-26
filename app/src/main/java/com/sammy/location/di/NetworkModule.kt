@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit
 
 val networkModule = module {
 
-    single { provideStarWarsService(retrofit = get()) }
+    single { provideLocationService(retrofit = get()) }
 
     single { provideRetrofit(okHttpClient = get(), url = "https://swapi.dev/api/") }
 
@@ -36,5 +36,5 @@ internal fun provideRetrofit(okHttpClient: OkHttpClient, url: String): Retrofit 
         .build()
 }
 
-internal fun provideStarWarsService(retrofit: Retrofit): LocationApiService =
+internal fun provideLocationService(retrofit: Retrofit): LocationApiService =
     retrofit.create(LocationApiService::class.java)
