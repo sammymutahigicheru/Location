@@ -1,4 +1,4 @@
-package com.sammy.location.utils
+package com.sammy.location.commons
 
 import android.content.Context
 import android.net.ConnectivityManager
