@@ -6,6 +6,6 @@ import com.sammy.domain.usecases.LocationsBaseUseCase
 import dagger.Module
 import org.koin.dsl.module
 
-val remoteDataSource = module{
+val remoteDataSourceModule = module{
     single<ILocationRepository>{LocationRepository(locationApiService = get())}
 }
