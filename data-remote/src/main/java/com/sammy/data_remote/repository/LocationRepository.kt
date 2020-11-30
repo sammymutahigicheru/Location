@@ -19,7 +19,7 @@ class LocationRepository(
         flow {
             val locationResponse = locationApiService.getCurrentLocation(locationBodyRequest)
             val locations = mutableListOf<Location>()
-            for (location in locationResponse.location) {
+            for (location in locationResponse.MiataruLocation) {
                 locations.add(location.toDomain())
             }
             emit(locations)

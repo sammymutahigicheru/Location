@@ -1,5 +1,6 @@
 package com.sammy.location.viewmodels
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.sammy.domain.models.LocationBodyRequest
@@ -59,6 +60,7 @@ class MainActivityViewModel(private val locationsBaseUseCase: LocationsBaseUseCa
             onGetLocationLoading()
             locationsBaseUseCase(locationBodyRequest).collect {
                 val locations = it.map { location -> location.toPresentation()  }
+                Log.d("MainViewModel","***************RESULTS******=>${locations}")
                 onCompleteGetLocation(locations)
             }
         }
