@@ -12,7 +12,7 @@ val networkModule = module {
 
     single { provideLocationService(retrofit = get()) }
 
-    single { provideRetrofit(okHttpClient = get(), url = "https://swapi.dev/api/") }
+    single { provideRetrofit(okHttpClient = get(), url = "http://service.miataru.com/") }
 
     single { provideOkHttpClient() }
 }

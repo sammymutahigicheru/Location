@@ -23,11 +23,11 @@ class MainActivityViewModel(private val locationsBaseUseCase: LocationsBaseUseCa
     private var _locationViewState = MutableLiveData<MainLocationViewState>()
 
     override val coroutineExceptionHandler = CoroutineExceptionHandler { _, exception ->
-        val message = ExceptionHandler.parse(exception)
+        val message = exception.message.toString()
         onGetLocationError(message)
     }
 
-    private fun onGetLocationError(message: Int) {
+    private fun onGetLocationError(message: String) {
         _locationViewState.value = _locationViewState.value?.copy(isLoading = false,error = Error(message))
     }
 
