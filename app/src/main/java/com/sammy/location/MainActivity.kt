@@ -4,14 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
+import com.sammy.domain.models.MiataruConfig
+import com.sammy.domain.models.MiataruGetLocation
 import com.sammy.domain.models.*
-import com.sammy.location.commons.showSnackbar
 import com.sammy.location.databinding.ActivityMainBinding
 import com.sammy.location.viewmodels.MainActivityViewModel
-import okhttp3.MediaType
-import okhttp3.RequestBody
-import org.koin.androidx.viewmodel.compat.ScopeCompat.viewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
@@ -25,7 +22,6 @@ class MainActivity : AppCompatActivity() {
             MiataruGetLocation = listOf(MiataruGetLocation("7b8e6e0ee5296db345162dc2ef652c1350761823"))
         )
         locationViewModel.executeGetLocation(request)
-
         observeViewState()
     }
 
