@@ -8,5 +8,5 @@ import retrofit2.http.POST
 
 interface LocationApiService {
     @POST("v1/GetLocation")
-    suspend fun getCurrentLocation(@Body locationBodyRequest: HashMap<String,String>):LocationResponse
+    suspend fun getCurrentLocation(@Body locationBodyRequest: LocationBodyRequest):LocationResponse
 }

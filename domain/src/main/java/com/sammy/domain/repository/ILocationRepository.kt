@@ -5,5 +5,5 @@ import com.sammy.domain.models.LocationBodyRequest
 import kotlinx.coroutines.flow.Flow
 
 interface ILocationRepository {
-    suspend fun getCurrentLocation(locationBodyRequest: HashMap<String,String>): Flow<List<Location>>
+    suspend fun getCurrentLocation(locationBodyRequest: LocationBodyRequest): Flow<List<Location>>
 }

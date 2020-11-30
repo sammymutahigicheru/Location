@@ -52,7 +52,7 @@ class MainActivityViewModel(private val locationsBaseUseCase: LocationsBaseUseCa
         super.onCleared()
         getLocationJob?.cancel()
     }
-    fun executeGetLocation(locationBodyRequest: HashMap<String, String>){
+    fun executeGetLocation(locationBodyRequest: LocationBodyRequest){
         getLocationJob?.cancel()
         getLocationJob = launchCoroutine {
             delay(500)

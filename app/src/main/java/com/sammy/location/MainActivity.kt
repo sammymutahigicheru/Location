@@ -20,9 +20,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
        binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
-        val request = HashMap<String, String>()
-        request.put("MiataruConfig","6140c3c0-4a7d-40d2-99ab-39414cac3509")
-        request.put("MiataruGetLocation", "7b8e6e0ee5296db345162dc2ef652c1350761823")
+        val request = LocationBodyRequest(
+            MiataruConfig = MiataruConfig("6140c3c0-4a7d-40d2-99ab-39414cac3509"),
+            MiataruGetLocation = listOf(MiataruGetLocation("7b8e6e0ee5296db345162dc2ef652c1350761823"))
+        )
         locationViewModel.executeGetLocation(request)
 
         observeViewState()
