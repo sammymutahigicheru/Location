@@ -5,12 +5,10 @@ import com.sammy.location.R
 import java.net.UnknownHostException
 
 internal object ExceptionHandler {
-
-    @StringRes
-    fun parse(t: Throwable): Int {
+    fun parse(t: Throwable): String {
         return when (t) {
-            is UnknownHostException -> R.string.error_check_internet_connection
-            else -> R.string.error_oops_error_occured
+            is UnknownHostException -> R.string.error_check_internet_connection.toString()
+            else -> R.string.error_oops_error_occured.toString()
         }
     }
 
