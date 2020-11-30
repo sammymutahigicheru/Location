@@ -6,10 +6,10 @@ import com.sammy.domain.models.Location
 
 internal fun MiataruLocation.toDomain(): Location {
     return Location(
-        this.device,
-        this.timestamp,
-        this.longitude,
-        this.latitude,
-        this.horizontalAccuracy
+        this.Device,
+        this.Timestamp,
+        this.Longitude,
+        this.Latitude,
+        this.HorizontalAccuracy
     )
 }

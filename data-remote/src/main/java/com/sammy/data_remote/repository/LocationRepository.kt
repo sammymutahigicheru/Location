@@ -8,6 +8,7 @@ import com.sammy.domain.models.LocationBodyRequest
 import com.sammy.domain.repository.ILocationRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import sun.rmi.runtime.Log
 import java.util.*
 import kotlin.collections.HashMap
 
@@ -18,7 +19,7 @@ class LocationRepository(
         flow {
             val locationResponse = locationApiService.getCurrentLocation(locationBodyRequest)
             val locations = mutableListOf<Location>()
-            for (location in locationResponse.location) {
+            for (location in locationResponse.MiataruLocation) {
                 locations.add(location.toDomain())
             }
             emit(locations)

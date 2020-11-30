@@ -99,7 +99,8 @@ dependencies {
     // Koin
     implementation appDependencies.koinAndroid
     implementation appDependencies.koinAndroidViewModel
-
+    //converter
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     //Test Libs
     testImplementation testDependencies.junit
     testImplementation testDependencies.robolectric
