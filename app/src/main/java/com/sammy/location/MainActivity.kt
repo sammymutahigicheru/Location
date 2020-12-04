@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity() {
             }
             states.locationResults?.let { results ->
                 binding.result.text = results.toString()
-
             }
             states.error?.run {
                 binding.result.text = this.message
