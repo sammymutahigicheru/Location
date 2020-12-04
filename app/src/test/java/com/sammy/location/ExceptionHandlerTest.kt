@@ -14,4 +14,9 @@ class ExceptionHandlerTest {
         val message = ExceptionHandler.parse(UnknownHostException())
         Truth.assertThat(message).isEqualTo(R.string.error_check_internet_connection)
     }
+    @Test
+    fun `given an exception when is unknown instance then get default string`() {
+        val message = ExceptionHandler.parse(Exception())
+        Truth.assertThat(message).isEqualTo(R.string.error_oops_error_occured)
+    }
 }
