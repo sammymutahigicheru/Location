@@ -3,7 +3,6 @@ package com.sammy.`data-remote`.repositories
 import com.google.common.truth.Truth
 import com.sammy.`data-remote`.BaseTest
 import com.sammy.`data-remote`.helpers.Constants.request
-import com.sammy.data_remote.api.LocationApiService
 import com.sammy.data_remote.repository.LocationRepository
 import com.sammy.domain.repository.ILocationRepository
 import kotlinx.coroutines.flow.collect
