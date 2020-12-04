@@ -15,7 +15,7 @@ class LocationRequestDispatcher:Dispatcher() {
             LOCATION_URL ->{
                 MockResponse()
                     .setResponseCode(HttpURLConnection.HTTP_OK)
-                    .setBody(getJson("json/location_search.json"))
+                    .setBody(getJson("json/location-search.json"))
             }
             else -> throw IllegalArgumentException("Unknown Request Path ${request.path.toString()}")
         }

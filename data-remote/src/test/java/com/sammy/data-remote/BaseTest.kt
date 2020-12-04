@@ -1,7 +1,9 @@
 package com.sammy.`data-remote`
 
+import com.google.gson.JsonSerializationContext
 import com.sammy.`data-remote`.helpers.LocationRequestDispatcher
 import com.sammy.data_remote.api.LocationApiService
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.mockwebserver.Dispatcher
@@ -9,7 +11,9 @@ import okhttp3.mockwebserver.MockWebServer
 import org.junit.After
 import org.junit.Before
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.converter.moshi.MoshiConverterFactory.create
 import java.util.concurrent.TimeUnit
 
 open class BaseTest {
@@ -18,8 +22,7 @@ open class BaseTest {
     private lateinit var loggingInterceptor: HttpLoggingInterceptor
     lateinit var locationApiService: LocationApiService
     @Before
-    override fun setUp(){
-        this.setUp()
+    fun setUp(){
         mockWebServer = MockWebServer()
         mockWebServer.dispatcher = LocationRequestDispatcher()
         mockWebServer.start()
@@ -31,7 +34,7 @@ open class BaseTest {
         locationApiService = Retrofit.Builder()
             .baseUrl(mockWebServer.url("/"))
             .client(okHttpClient)
-            .addConverterFactory(MoshiConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(LocationApiService::class.java)
     }
