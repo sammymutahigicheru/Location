@@ -18,7 +18,8 @@ open class BaseTest {
     private lateinit var loggingInterceptor: HttpLoggingInterceptor
     lateinit var locationApiService: LocationApiService
     @Before
-    fun setUp(){
+    override fun setUp(){
+        this.setUp()
         mockWebServer = MockWebServer()
         mockWebServer.dispatcher = LocationRequestDispatcher()
         mockWebServer.start()
