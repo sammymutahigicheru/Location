@@ -1,6 +1,7 @@
 package com.sammy.`data-remote`.helpers
 
 import com.google.common.io.Resources
+import okhttp3.mockwebserver.RecordedRequest
 import java.io.File
 
 /**
@@ -11,7 +12,7 @@ import java.io.File
  * @return json : JSON from file at given path
  */
 
-internal fun getJson(path: String): String {
+internal fun getJson(path: RecordedRequest): String {
     val uri = Resources.getResource(path)
     val file = File(uri.path)
     return String(file.readBytes())

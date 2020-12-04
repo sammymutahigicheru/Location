@@ -1,8 +1,10 @@
 package com.sammy.`data-remote`
 
+import com.sammy.`data-remote`.helpers.LocationRequestDispatcher
 import com.sammy.data_remote.api.LocationApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import okhttp3.mockwebserver.Dispatcher
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.After
 import org.junit.Before
